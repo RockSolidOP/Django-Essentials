@@ -1,13 +1,12 @@
 from turtle import title
-from urllib import request
 from django.shortcuts import render
 from .models import Notes
-from django.http import Http404, HttpResponseRedirect
+from django.http import  HttpResponseRedirect
 from django.views.generic import ListView,DetailView,CreateView,UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import DeleteView
 from notes.forms import NotesForm
-# Create your views here.
+
 
 
 
@@ -55,24 +54,3 @@ class NotesDetail(LoginRequiredMixin,DetailView):
     template_name = 'notes\\notes_details.html'    
     context_object_name = 'note'
     login_url = '/admin'
-
-# def list(request=request):
-#     all_notes = Notes.objects.all()
-#     return render(request=request,template_name="notes\\notes.html",context={'all_notes' : all_notes})
-
-# def showHead(request=request):
-    
-#     return render(request=request,template_name="notes\\abc.html",context={})
-
-
-# def detail(reqeust, pk):
-
-#     try: 
-#         note = Notes.objects.get(pk=pk)
-    
-#     except Notes.DoesNotExist:
-#         raise Http404("Note does not exist")
-
-   
-#     print(note.title)
-#     return render(request=reqeust, template_name="notes\\notes_details.html", context= { 'note' : note})
