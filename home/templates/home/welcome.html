@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <p> Date Time : {{ time }}</p>
+        <a href="{% url 'notes.list' %}" class="btn btn-primary">Check out my smart notes</a> 
+{% endblock%}
